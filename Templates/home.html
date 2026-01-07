@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI";
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='Images/image1.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgb(79, 126, 255);
+            align-items: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            color: #c0392b;
+            font-size: 2.2rem;
+        }
+
+        .content a {
+            display: inline-block;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            background-color: #c0392b;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            border-radius: 5px;
+            width: 50%;
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+
+        .content a:hover {
+            background-color: #a93226;
+            transform: scale(1.05);
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 40px 20px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h4 {
+            color: #c0392b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .content p {
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .content h5 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .content ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #555;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Heart Disease Prediction</h1>
+    </header>
+    <section class="content">
+        <h4>Heart / Cardiovascular Disease</h4>
+        <p>
+            Cardiovascular disease (heart disease) refers to a group of diseases that affect the heart and
+            blood vessels of your body. These diseases can affect one or many parts of your heart and/or blood
+            vessels. A person may be symptomatic (physically experience the disease) or asymptomatic (not
+            feel anything at all).
+        </p>
+
+        <h5>Common Symptoms</h5>
+        <ul>
+            <li>Pounding or racing heart (palpitations)</li>
+            <li>Chest pain</li>
+            <li>Sweating</li>
+            <li>Lightheadedness</li>
+            <li>Shortness of breath</li>
+        </ul>
+        <center>
+            <a href="/heart">Go to Heart Prediction Form</a>
+        </center>
+    </section>
+
+    <footer>
+        &copy; 2025 Heart Disease Prediction | Designed by Naveen
+    </footer>
+</body>
+
+</html>

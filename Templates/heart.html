@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Prediction Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+            background-image: url("{{ url_for('static', filename='Images/image2.png') }}");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(79, 126, 255);
+        }
+
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            /* smaller padding */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            /* smaller max-width */
+            margin: 20px;
+            /* optional: space from screen edges */
+        }
+
+
+        h2 {
+            text-align: center;
+            color: #f83b26;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #a93226;
+            transform: scale(1.05);
+        }
+
+        .message {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Enter Your Health Details</h2>
+        <p class="message">{{ message }}</p>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="text" name="age" required>
+
+            <label>Sex (1=Male, 0=Female):</label>
+            <input type="text" name="sex" required>
+
+            <label>Chest Pain Type (0-3):</label>
+            <input type="text" name="cp" required>
+
+            <label>Resting Blood Pressure:</label>
+            <input type="text" name="trestbps" required>
+
+            <label>Cholesterol:</label>
+            <input type="text" name="chol" required>
+
+            <label>Fasting Blood Sugar (1=high, 0=low ):</label>
+            <input type="text" name="fbs" required>
+
+            <label>Rest ECG (0-2):</label>
+            <input type="text" name="restecg" required>
+
+            <label>Max Heart Rate:</label>
+            <input type="text" name="thalach" required>
+
+            <label>Exercise Induced Angina(0-1):</label>
+            <input type="text" name="exang" required>
+
+            <label>Oldpeak:</label>
+            <input type="text" name="oldpeak" required>
+
+            <label>Slope(0-2):</label>
+            <input type="text" name="slope" required>
+
+            <label>Major Vessels (0-3) :</label>
+            <input type="text" name="ca" required>
+
+            <label>Thal (1=normal, 2=fixed defect, 3=reversable defect):</label>
+            <input type="text" name="thal" required>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+
+</html>

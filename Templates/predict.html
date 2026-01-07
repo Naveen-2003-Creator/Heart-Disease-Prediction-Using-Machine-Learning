@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prediction Result</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 30px 0;
+            background-image: url("{{ url_for('static', filename='Images/image3.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #4f7eff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        /* Form container */
+        .form-container,
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #c0392b;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        button,
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #c0392b;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover,
+        a:hover {
+            background-color: #a93226;
+            transform: scale(1.05);
+        }
+
+        .message {
+            text-align: center;
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+
+            .form-container,
+            .result-container {
+                padding: 20px;
+                max-width: 95%;
+            }
+
+            button,
+            a {
+                width: 80%;
+                padding: 10px 0;
+            }
+        }
+
+        .hospital-btn {
+            background-color: #c0392b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .hospital-btn:hover {
+            background-color: #a93226;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="result-container">
+        <h2>{{ prediction }}</h2>
+        <a href="/heart">Try Again</a> | <a href="/">Home</a>
+
+        <!-- Button for nearest hospital -->
+        <button class="hospital-btn"
+            onclick="window.open('https://www.google.com/maps/search/heart+specialist+hospital+near+me/', '_blank')">
+            🔍 Find Nearest Hospital
+        </button>
+    </div>
+</body>
+
+</html>
